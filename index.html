@@ -20,19 +20,19 @@
             <section id="timer" class="timer">
                 <div class="timer__inner">
                     <div class="timer__input">
-                        <input type="number" class="ipt ipt--hours" id="iptHours" min="0" value="0">
+                        <input type="number" class="ipt-time ipt-time--hours" id="iptHours" min="0">
                     </div>
                     :
                     <div class="timer__input">
-                        <input type="number" class="ipt ipt--minutes" id="iptMinutes" min="0" max="60" value="0">
+                        <input type="number" class="ipt-time ipt-time--minutes" id="iptMinutes" min="0" max="60">
                     </div>
                     :
                     <div class="timer__input">
-                        <input type="number" class="ipt ipt--seconds" id="iptSeconds" min="0" max="60" value="0">
+                        <input type="number" class="ipt-time ipt-time--seconds" id="iptSeconds" min="0" max="60">
                     </div>
                 </div>
                 <div class="timer__buttons">
-                    <button type="button" class="btn btn--primary btn--start">Start</button>
+                    <button type="button" class="btn btn--primary btn--start" disabled>Start</button>
                     <button type="button" class="btn btn--primary btn--pause" disabled>Pause</button>
                     <button type="button" class="btn btn--reset">Reset</button>
                 </div>
@@ -40,17 +40,35 @@
             <!-- // -->
             <!-- timer setting -->
             <aside id="savedTimer" class="savedtimer">
-                <button type="button" class="savedtimer__button" data-hours="0" data-minutes="3" data-seconds="0">
-                    🍜 라면 익히는 시간
-                </button>
-                <button type="button" class="savedtimer__button" data-hours="0" data-minutes="2" data-seconds="30">
-                    🏃‍♀️ 플랭크 지속 시간
-                </button>
+                <h3>자주 쓰는 타이머</h3>
+                <form id="savedTimerForm" class="savedtimer__form">
+                    <input type="text" id="iptTimerName" class="ipt ipt--timername" required>
+                    <input type="submit" class="ipt ipt--submit" value="Make It!">
+                </form>
+                <div class="savedtimer__list">
+                    <div class="savedtimer__item">
+                        <button type="button" class="savedtimer__button" data-hours="0" data-minutes="3" data-seconds="5">
+                            🍜 라면 익히는 시간
+                        </button>
+                        <button type="button" class="btn btn--delete">
+                            ❌
+                        </button>
+                    </div>
+                    <div class="savedtimer__item">
+                        <button type="button" class="savedtimer__button" data-hours="0" data-minutes="2" data-seconds="30">
+                            🏃‍♀️ 플랭크 지속 시간
+                        </button>
+                        <button type="button" class="btn btn--delete">
+                            ❌
+                        </button>
+                    </div>
+                </div>
             </aside>
             <!-- // -->
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/savedTimer.js"></script>
 </body>
 </html>
